@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <link href="Main.css" rel="stylesheet"/>
+        <script src="jquery-1.10.2.min.js"></script>
+        <script src="JQUERY%20Main.js"></script>
+    </head>
+    <body>
+        <div id="box">
+            <div id="main"></div>
+            
+            <div id="loginform">
+                <h1>LOGIN</h1>
+                <input type="email" placeholder="Email" id="cred-log"/><br>
+                <input type="password" placeholder="Password" id="cred-pass"/><br>
+                <button id="btn-l">LOGIN</button>
+            </div>
+            
+            <div id="signupform">
+                <h1>SIGN UP</h1>
+                <input type="text" placeholder="Full Name" id="name"/><br>
+                <input type="email" placeholder="Email" id="email"/><br>
+                <input type="password" placeholder="Password" id="password"/><br>
+                <button id="btn-s">SIGN UP</button>
+            </div>
+            
+            <div id="login_msg">Have an account?</div>
+            <div id="signup_msg">Don't have an account?</div>
+            
+            <button id="login_btn">LOGIN</button>
+            <button id="signup_btn">SIGN UP</button>
+        </div>
+        <script>
+            var users = new Object();
+            var contador = 0;
+            var btn_s = document.getElementById('btn-s');
+            btn_s.addEventListener('click', function(){
+                var email = document.getElementById('email').value;
+                var pass = document.getElementById('password').value;
+                users.name = email;
+                users.password = pass;
+
+                localStorage.setItem('name',email);
+                localStorage.setItem('password',pass);
+
+                console.log(`docigo ${contador} ususario ${users}`);
+                alert('Credential Save');
+                var nombre = document.getElementById('name').value = '';
+                var email = document.getElementById('email').value = '';
+                var pass = document.getElementById('password').value = '';
+                contador =+ 1;
+            });
+
+            var btn_l = document.getElementById('btn-l');
+            btn_l.addEventListener('click', function(){
+                var email = document.getElementById('cred-log').value;
+                var pass = document.getElementById('cred-pass').value;
+
+                if (email == localStorage.getItem('name') && pass === localStorage.getItem('password')) {
+                    alert('Welcome');
+                    localStorage.setItem('estado','ok');
+                } else {
+                    alert('Credential Error');
+                }
+
+            });
+        </script>
+    </body>
+</html>

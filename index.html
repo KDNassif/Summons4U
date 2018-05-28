@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="Main.css" rel="stylesheet"/>
+    <script src="jquery-1.10.2.min.js"></script>
+    <script src="JQUERY%20Main.js"></script>
+    <title>Summons4U</title>
+</head>
+
+<body>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content body">
+          <span class="close">&times;</span>
+          <div class="body">
+                <div id="box">
+                        <div id="main"></div>
+                        
+                        <div id="loginform">
+                            <h1>LOGIN</h1>
+                            <input type="email" placeholder="Email" id="cred-log"/><br>
+                            <input type="password" placeholder="Password" id="cred-pass"/><br>
+                            <button id="btn-l">LOGIN</button>
+                        </div>
+                        
+                        <div id="signupform">
+                            <h1>SIGN UP</h1>
+                            <input type="text" placeholder="Full Name" id="name"/><br>
+                            <input type="email" placeholder="Email" id="email"/><br>
+                            <input type="password" placeholder="Password" id="password"/><br>
+                            <button id="btn-s">SIGN UP</button>
+                        </div>
+                        
+                        <div id="login_msg">Have an account?</div>
+                        <div id="signup_msg">Don't have an account?</div>
+                        
+                        <button id="login_btn">LOGIN</button>
+                        <button id="signup_btn">SIGN UP</button>
+                    </div>
+          </div>
+        </div>
+      
+    </div>
+    <div class="container">
+        <div class="section header" id="home">
+            <header>
+                <div class="nav-container">
+                    <img src="image/imagotipo.svg" alt="">
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="#home">Home</a>
+                            </li>
+                            <li>
+                                <a href="#about">About</a>
+                            </li>
+                            <li>
+                                <a href="#video">Video</a>
+                            </li>
+                            <li>
+                                <a href="#blog">Blog</a>
+                            </li>
+                            <li>
+                                <a href="#kid-zone" class="ultimo">Kids Zone</a>
+                            </li>
+                            <li>
+                                <a href="#" id="myBtn">Login</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+            <section class="header-info">
+                <img src="image/logo.png" alt="imagotipo empresa">
+                <p>
+                    Welcome
+                    <span>Hello, we are happy to have you at Summons4U, a company dedicated to the development of video games.
+                        keep knowing more about us, enjoy our world !.</span>
+                </p>
+            </section>
+        </div>
+        <div class="section about" id="about">
+            <section>
+                <h2>About Company</h2>
+                <p>Summons4U is a company dedicated to the development of video games, we focus on the development of low platforms
+                    for the consumption of video games and the development thereof, using the technologies of the most popular
+                    video game engines such as Unity and Cryengine.
+                    <br>Enjoy our world !.</p>
+            </section>
+            <section>
+                <img src="image/logo2.png" alt="imagotipo empresa">
+                <h2 class="eception">Summons4U</h2>
+            </section>
+        </div>
+        <div class="section video" id="video">
+            <section>
+                <!-- <img src="image/video.svg" alt="imagen video"> -->
+                <video src="video/juego.mp4" id="gameVideo"></video>
+            </section>
+            <section class="video-text">
+                <h2>Streaming</h2>
+                <p>Be your first to know our next games, in this section you can also share your experiences playing our products
+                    and watching the trailers of our next releases.
+                    <br>Enjoy our world !.</p>
+                <button class="btn derecho" onclick="masVideos()">More Videos</button>
+            </section>
+        </div>
+        <div class="section blog" id="blog">
+            <section>
+                <h2>Blog</h2>
+                <p>You have doubts, or you can solve those of others, if you are very good at games because you do not help
+                    others who are trapped in levels or have other problems, in our blog you can help others, come in .</p>
+                <button class="btn izquierdo" onclick="visitarBlog()">Visit Blog</button>
+            </section>
+            <section>
+                <img src="image/blog.svg" alt="imagen blog">
+            </section>
+        </div>
+        <div class="section kid-zone" id="kid-zone">
+            <section>
+                <iframe id="game" src="http://emea.iframed.cn.dmti.cloud/content/448/game/penalty-power/uk/penaltypower-040518/index.html"
+                    frameborder="0"></iframe>
+            </section>
+            <section>
+                <h2>Kids Zone</h2>
+                <p>stop please, let's have fun for a moment, play and have fun there is no limit.</p>
+            </section>
+        </div>
+        <div class="footer">
+            <footer>
+                <h2>Summons4U</h2>
+                <p>Thank you for being to whom, we invite you to follow us on our social networks in order to be in contact
+                    with you and so you learn about what is happening in Summons4U.</p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="js/modal.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
+    <script type="text/javascript">
+        var vid = document.getElementById("gameVideo");
+        function playVideo() {
+            vid.play();
+        }
+        function pausaVideo() {
+            vid.pause();
+        }  
+        function visitarBlog() {
+            window.open('https://painforums.000webhostapp.com/login.php', '_blank');
+        }
+        function masVideos() {
+            window.open('https://painforums.000webhostapp.com/login.php', '_blank');
+        }
+        if (annyang) {
+            var comandos = {
+                'blog': function () {
+                    visitarBlog()
+                },
+                'video': function () {
+                    masVideos();
+                },
+                'play': function () {
+                    playVideo();
+                },
+                'stop': function () {
+                    pausaVideo();
+                }
+            };
+
+            annyang.addCommands(comandos);
+
+            //annyang.setLanguage('es-MX');
+            annyang.start();
+        }
+    </script>
+</body>
+
+</html>
